@@ -50,4 +50,7 @@ require("lazy").setup({
       },
     },
   },
+  rocks = {
+    enabled = false, -- luarocks / hererocks を完全に無効化
+  },
 })
