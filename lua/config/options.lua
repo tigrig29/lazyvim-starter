@@ -19,3 +19,5 @@ if vim.fn.has("win32") == 1 then
   end
 end
 
+-- 行をまたいでカーソル移動
+vim.opt.whichwrap:append("<,>,[,],h,l")
