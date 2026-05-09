@@ -28,6 +28,12 @@ return {
       view_options = {
         show_hidden = true,
       },
+      keymaps = {
+        ["<C-p>"] = function()
+          Snacks.picker.files()
+        end,
+        ["K"] = "actions.preview",
+      },
     },
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = {
