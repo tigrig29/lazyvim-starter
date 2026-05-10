@@ -16,3 +16,12 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.formatoptions:remove({ "r", "o" })
   end,
 })
+
+-- ターミナルモードから脱出するための設定
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = vim.api.nvim_create_augroup("custom_terminal_keymaps", { clear = true }),
+  callback = function()
+    -- バッファローカルな設定として適用することでグローバルな競合を回避
+    vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { buffer = 0, desc = "Exit terminal mode", nowait = true })
+  end,
+})

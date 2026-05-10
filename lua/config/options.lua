@@ -21,3 +21,6 @@ end
 
 -- 行をまたいでカーソル移動
 vim.opt.whichwrap:append("<,>,[,],h,l")
+
+-- エンコーディング
+vim.opt.fileencodings = "utf-8,cp932"
