@@ -1,7 +1,9 @@
 {
   "extras": [
     "lazyvim.plugins.extras.ai.copilot",
-    "lazyvim.plugins.extras.lang.markdown"
+    "lazyvim.plugins.extras.lang.typescript.biome",
+    "lazyvim.plugins.extras.lang.markdown",
+    "lazyvim.plugins.extras.lang.typescript"
   ],
   "install_version": 8,
   "news": {
