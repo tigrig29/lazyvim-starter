@@ -7,6 +7,9 @@ vim.keymap.set("i", "<C-v>", "<C-r><C-o>+", { desc = "Paste from system clipboar
 -- コマンドラインモード（: を押した後）での貼り付け
 vim.keymap.set("c", "<C-v>", "<C-r>+", { desc = "Paste from system clipboard" })
 
+-- <C-q> で :qa
+vim.keymap.set("n", "Q", "<cmd>qa<cr>", { desc = "Quit all" })
+
 -- <C-s> で保存
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 
