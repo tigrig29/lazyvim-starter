@@ -7,20 +7,14 @@ vim.keymap.set("i", "<C-v>", "<C-r><C-o>+", { desc = "Paste from system clipboar
 -- コマンドラインモード（: を押した後）での貼り付け
 vim.keymap.set("c", "<C-v>", "<C-r>+", { desc = "Paste from system clipboard" })
 
--- ターミナルキー設定
-vim.keymap.del("n", "<leader>ft")
-vim.keymap.del("n", "<leader>fT")
-vim.keymap.set("n", "<leader><leader>", function()
-  Snacks.terminal()
-end, { desc = "Terminal (Root Dir)" })
-vim.keymap.set("n", "<leader>T", function()
-  Snacks.terminal(nil, { cwd = vim.uv.cwd() })
-end, { desc = "Terminal (cwd)" })
+-- <C-q> で :qa
+vim.keymap.set("n", "Q", "<cmd>qa<cr>", { desc = "Quit all" })
 
 -- <C-s> で保存
 vim.keymap.set({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 
 -- <C-p> でファイル検索
+vim.keymap.del("n", "<leader><leader>")
 vim.keymap.set("n", "<C-p>", function()
   Snacks.picker.files()
 end, { desc = "Find Files" })
