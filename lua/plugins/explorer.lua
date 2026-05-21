@@ -29,6 +29,8 @@ return {
         show_hidden = true,
       },
       keymaps = {
+        ["<C-s>"] = false, -- デフォルトの垂直分割を無効化（保存キーと競合するため）
+        ["<C-v>"] = "actions.select_vsplit", -- 垂直分割で開く
         ["<C-p>"] = function()
           Snacks.picker.files()
         end,
