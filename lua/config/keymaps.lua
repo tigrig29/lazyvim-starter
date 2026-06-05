@@ -18,3 +18,6 @@ vim.keymap.del("n", "<leader><leader>")
 vim.keymap.set("n", "<C-p>", function()
   Snacks.picker.files()
 end, { desc = "Find Files" })
+
+-- U で redo
+vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
