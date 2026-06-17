@@ -18,3 +18,11 @@ vim.keymap.del("n", "<leader><leader>")
 vim.keymap.set("n", "<C-p>", function()
   Snacks.picker.files()
 end, { desc = "Find Files" })
+
+-- U で redo
+vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
+
+-- dやxなどの削除操作でクリップボード（ヤンク）にコピーしないようにする
+vim.keymap.set({ "n", "v" }, "d", '"_d', { desc = "Delete without copying" })
+vim.keymap.set({ "n", "v" }, "D", '"_D', { desc = "Delete without copying" })
+vim.keymap.set({ "n", "v" }, "x", '"_x', { desc = "Delete character without copying" })
