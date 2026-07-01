@@ -26,3 +26,13 @@ vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
 vim.keymap.set({ "n", "v" }, "d", '"_d', { desc = "Delete without copying" })
 vim.keymap.set({ "n", "v" }, "D", '"_D', { desc = "Delete without copying" })
 vim.keymap.set({ "n", "v" }, "x", '"_x', { desc = "Delete character without copying" })
+
+-- 自動補完のトグル
+vim.keymap.set("n", "<leader>uc", function()
+  vim.g.blink_auto_show = not vim.g.blink_auto_show
+  if vim.g.blink_auto_show then
+    vim.notify("Auto completion ENABLED", vim.log.levels.INFO)
+  else
+    vim.notify("Auto completion DISABLED", vim.log.levels.WARN)
+  end
+end, { desc = "Toggle Auto Completion (Copilot/IntelliSense)" })
