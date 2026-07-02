@@ -16,6 +16,14 @@ return {
             },
           },
         },
+        hls = {
+          mason = false,
+        },
+      },
+      setup = {
+        hls = function()
+          return true -- haskell-tools が独自に起動するため、lspconfigからの起動をスキップ
+        end,
       },
     },
   },
