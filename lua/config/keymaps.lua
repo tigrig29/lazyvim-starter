@@ -27,6 +27,11 @@ vim.keymap.set({ "n", "v" }, "d", '"_d', { desc = "Delete without copying" })
 vim.keymap.set({ "n", "v" }, "D", '"_D', { desc = "Delete without copying" })
 vim.keymap.set({ "n", "v" }, "x", '"_x', { desc = "Delete character without copying" })
 
+-- X で切り取り（Cut: クリップボードに保存）
+vim.keymap.set({ "n", "v" }, "X", '"+d', { desc = "Cut" })
+vim.keymap.set("n", "XX", '"+dd', { desc = "Cut line" })
+
+
 -- 自動補完のトグル
 vim.keymap.set("n", "<leader>uc", function()
   vim.g.blink_auto_show = not vim.g.blink_auto_show
