@@ -2,6 +2,10 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
+      inlay_hints = {
+        enabled = true,
+        exclude = { "cabal", "cabalproject" },
+      },
       servers = {
         lua_ls = {
           settings = {
@@ -16,6 +20,14 @@ return {
             },
           },
         },
+        hls = {
+          mason = false,
+        },
+      },
+      setup = {
+        hls = function()
+          return true -- haskell-tools が独自に起動するため、lspconfigからの起動をスキップ
+        end,
       },
     },
   },
